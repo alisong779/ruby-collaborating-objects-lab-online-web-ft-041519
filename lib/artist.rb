@@ -23,7 +23,7 @@ class Artist
   end 
     
   def self.find_or_create_by_name(name)
-    found_artist = self.all.find {|artist| Artist.name == name} || self.new(name).save
+    found_artist = self.all.find {|artist| Artist.name == name} 
     
       #binding.pry 
   end 

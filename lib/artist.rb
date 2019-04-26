@@ -23,10 +23,14 @@ class Artist
   end 
     
   def self.find_or_create_by_name(name)
-    found_artist = self.all.find {|artist| Artist.name == name} 
-    
-      #binding.pry 
-  end 
+      self.all.each do |artist|
+        if artist.name == artist_name
+          return artist
+        else
+          return Artist.new(artist_name)
+      end
+    end
+  end
   
   def print_songs 
      songs.each {|song| puts song.name}

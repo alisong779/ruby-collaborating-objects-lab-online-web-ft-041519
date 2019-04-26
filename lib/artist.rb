@@ -21,21 +21,10 @@ class Artist
   def save
     @@all << self 
   end 
-  
-  # def self.create(name)
-  #   artist = self.new(name)     
-  #   artist.name = name 
-  #   artist 
-  # end 
-  
-  # def self.find(name)
-  #   self.all.find {|artist| artist.name == name}                                                            
-  # end
     
-  
   def self.find_or_create_by_name(name)
-      #self.all.find {|artist| Artist.name == name} || self.new(name).save
-      # self.find(name) ? self.find(name) : self.create(name)
+    found_artist = self.all.find {|artist| Artist.name == name} || self.new(name).save
+    
       #binding.pry 
   end 
   

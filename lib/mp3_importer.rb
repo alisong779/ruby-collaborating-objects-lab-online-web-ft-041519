@@ -7,7 +7,7 @@ class MP3Importer
   end 
   
   def files
-    Dir.entries(path).select {entry.include?("mp3")}
+    files = Dir.entries(path).select {entry.include?("mp3")}
   end 
   
    def import
